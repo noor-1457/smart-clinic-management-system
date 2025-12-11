@@ -1,26 +1,57 @@
-﻿<!DOCTYPE html>
-
-<html>
+﻿﻿
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    <a href="~/tailwindcss/chunk-g32fjcsr.mjs">~/tailwindcss/chunk-g32fjcsr.mjs</a>
-    <a href="~/tailwindcss/chunk-htb5llop.mjs">~/tailwindcss/chunk-htb5llop.mjs</a>
-    <a href="~/tailwindcss/chunk-u5sipdgo.mjs">~/tailwindcss/chunk-u5sipdgo.mjs</a>
-    <a href="~/tailwindcss/chunk-vendors.mjs">~/tailwindcss/chunk-vendors.mjs</a>
-    <a href="~/tailwindcss/colors.mjs">~/tailwindcss/colors.mjs</a>
-    <a href="~/tailwindcss/tailwind.mjs">~/tailwindcss/tailwind.mjs</a>
-    <a href="~/tailwindcss/default-theme.mjs">~/tailwindcss/default-theme.mjs</a>
-    <a href="~/tailwindcss/flatten-color-palette.mjs">~/tailwindcss/flatten-color-palette.mjs</a>
-    <a href="~/tailwindcss/default-theme.mjs">~/tailwindcss/default-theme.mjs</a>
-    <a href="~/tailwindcss/lib.mjs">~/tailwindcss/lib.mjs</a>
-    <a href="~/tailwindcss/plugin.mjs">~/tailwindcss/plugin.mjs</a>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>@ViewData["Title"] - Smart Clinic</title>
 
+    <!-- ✅ TAILWIND CSS ONLY -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ✅ ASP.NET Core default CSS (optional) -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-<body>
-    <div>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <!-- ✅ NAVBAR (TAILWIND) -->
+    <header class="bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+            <a asp-controller="Home" asp-action="Index"
+               class="text-2xl font-bold tracking-wide">
+                Smart Clinic
+            </a>
+
+            <nav class="space-x-6 font-medium">
+                <a asp-controller="Home" asp-action="Index" class="hover:underline">
+                    Home
+                </a>
+                <a asp-controller="Home" asp-action="Doctors" class="hover:underline">
+                    Doctors
+                </a>
+                <a asp-controller="Home" asp-action="Contact" class="hover:underline">
+                    Contact
+                </a>
+                <a asp-controller="Account" asp-action="Login"
+                   class="ml-4 bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-200 transition">
+                    Login
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ✅ PAGE CONTENT -->
+    <main class="flex-grow">
         @RenderBody()
-    </div>
+    </main>
+
+    <!-- ✅ FOOTER -->
+    <footer class="bg-gray-900 text-white text-center py-4">
+        © 2025 Smart Clinic. All Rights Reserved.
+    </footer>
+
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
