@@ -1,0 +1,42 @@
+@model List<smart_clinic_management.Models.DoctorViewModel>
+
+    @{
+    ViewData["Title"] = "Doctors";
+    }
+
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Title -->
+            <h2 class="text-3xl font-bold text-center text-blue-600 mb-10">
+                Our Qualified Doctors
+            </h2>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                @foreach (var doctor in Model)
+            {
+                <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition">
+
+                    <h3 class="text-xl font-semibold text-gray-800">@doctor.Name</h3>
+
+                    <p class="text-blue-600 font-medium mt-2">
+                        @doctor.Specialty
+                    </p>
+
+                    <p class="text-gray-500 mt-1 text-sm">
+                        Experience: @doctor.Experience
+                    </p>
+
+                    <a href="/Account/Login"
+                       class="inline-block mt-5 bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+                        Book Appointment
+                    </a>
+
+                </div>
+            }
+            </div>
+
+        </div>
+    </section>

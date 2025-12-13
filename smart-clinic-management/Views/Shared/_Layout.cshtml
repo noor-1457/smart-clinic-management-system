@@ -33,9 +33,23 @@
                 <a asp-controller="Home" asp-action="Contact" class="hover:underline">
                     Contact
                 </a>
+
+                <!-- Patient Login -->
                 <a asp-controller="Account" asp-action="Login"
                    class="ml-4 bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-200 transition">
-                    Login
+                    Patient Login
+                </a>
+
+                <!-- Doctor Login -->
+                <a asp-controller="Account" asp-action="DoctorLogin"
+                   class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-200 transition">
+                    Doctor Login
+                </a>
+
+                <!-- Admin Login -->
+                <a asp-controller="Account" asp-action="AdminLogin"
+                   class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+                    Admin
                 </a>
             </nav>
         </div>

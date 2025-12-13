@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Patient Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <form class="bg-white p-8 rounded shadow w-96"
+          onsubmit="return validateLogin()">
+
+        <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">
+            Patient Login
+        </h2>
+
+        <input id="email" type="email" placeholder="Email"
+               class="w-full border p-2 rounded mb-2" />
+
+        <input id="password" type="password" placeholder="Password"
+               class="w-full border p-2 rounded mb-2" />
+
+        <!-- Error Message -->
+        <p id="errorMsg" class="text-red-600 text-sm mb-3 hidden">
+            Please fill all fields correctly.
+        </p>
+
+        <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+            Login
+        </button>
+
+        <p class="text-sm text-center mt-4">
+            New patient?
+            <a href="/Account/Register" class="text-blue-600 hover:underline">
+                Create Account
+            </a>
+        </p>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+    function validateLogin() {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let error = document.getElementById("errorMsg");
+
+        if (email === "" || password === "") {
+            error.classList.remove("hidden");
+            return false;
+        }
+
+        return true;
+    }
+    </script>
+}
